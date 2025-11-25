@@ -43,7 +43,8 @@
 }
 
 .theme-toggle {
-  right: 600px;
+  position: absolute;
+  right: 400px;
   top: 100px;
   background: rgba(255, 255, 255, 0.06);
   border: none;

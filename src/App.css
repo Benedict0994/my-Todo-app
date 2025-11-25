@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, "Segoe UI", Roboto, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f8fb;
+  background-size: 100% 40vh;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.app.dark {
+  background-color: #161722;
+  background-image: url("./bg-destop-dark.jpg");
+}
+
+.app.light {
+  background-image: url("./bg-desktop-light.jpg");
+}
+
+/* header */
+.hero {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  letter-spacing: 0.6rem;
+  font-size: 2.4rem;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 600px;
+  top: 100px;
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  padding: 8px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  transform: translateY(60%);
+}
+
+/* center */
+.center-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -60px;
+  padding: 40px 20px 80px;
+}
+
+/* card */
+.card {
+  width: 420px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(11, 13, 22, 0.18);
+  overflow: hidden;
+  color: #222;
+}
+
+.app.dark .card {
+  background: #252938;
+  color: #e6e6f0;
+  box-shadow: 0 20px 40px rgba(3, 6, 12, 0.6);
+}
+
+/* input */
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.app.dark .input-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.input-left-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  background: transparent;
+}
+
+.app.dark .input-left-circle {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.task-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 12px 8px;
+  font-size: 1rem;
+  color: inherit;
+}
+
+/* list */
+.todo-list {
+  list-style: none;
+  max-height: 360px;
+  overflow: auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  background: transparent;
+}
+
+.app.dark .todo-item {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.03);
+}
+
+.check-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4f46e5;
+  font-weight: 700;
+}
+
+.app.dark .check-btn {
+  border-color: rgba(255, 255, 255, 0.06);
+  color: #60a5fa;
+}
+
+.check-circle {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-text {
+  flex: 1;
+  cursor: pointer;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.app.dark .todo-item.completed .todo-text {
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+/* footer */
+.list-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: transparent;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.app.dark .list-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.items-left {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+}
+
+.app.dark .items-left {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.filter-btn.active {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.app.dark .filter-btn {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.app.dark .clear-btn {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* hint */
+.reorder-hint {
+  margin-top: 18px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.app.dark .reorder-hint {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* responsiveness */
+@media (max-width: 480px) {
+  .card {
+    width: 92%;
+  }
+  .hero {
+    height: 180px;
+  }
+  .logo {
+    font-size: 1.6rem;
+    letter-spacing: 0.4rem;
+  }
+}
